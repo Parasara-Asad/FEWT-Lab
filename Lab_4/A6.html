@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A6</title>
+</head>
+<body>
+    <script>
+        let num = prompt("Enter a number between 0 and 999: ");
+        parseInt(num);
+        let ten = ["one","Two","There","Four","Five","Six","Seven","Eight","Nine","Ten","Even","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"];
+        let hundred = ["Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"];
+        if(num < 0 || num > 999){
+            document.write("Out of range");
+        }
+        else if(isNaN(num)){
+            document.write("Not a number");
+        }
+        else{
+            let n = parseInt(num);
+            let ans = "";
+            if(n >= 100){
+                ans += ten[Math.floor(n/100)-1] + " Hundred ";
+                n = n % 100;
+            }
+            if(n >= 20){
+                ans += hundred[Math.floor(n/10)-2] + " ";
+                n = n % 10;
+            }
+            if(n > 0){
+                ans += ten[n-1];
+            }
+            document.write(ans);
+        }   
+    </script>
+</body>
+</html>

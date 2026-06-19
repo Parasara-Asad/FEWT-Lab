@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A5</title>
+  </head>
+  <body>
+    <script>
+      let n = parseInt(prompt("Enter number: "));
+      let pow;
+        pow = n % 10;
+        n = parseInt(n/10);
+        let base = n;
+        let ans=1;
+        for(let i=1; i<=pow; i++){
+            ans *=base;
+        }
+        document.write("Answer is: "+ans);
+    </script>
+  </body>
+</html>

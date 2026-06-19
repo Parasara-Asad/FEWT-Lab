@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A4</title>
+  </head>
+  <body>
+    <script>
+      //    print the GCD of two number.
+      let a = parseInt(prompt("Enter number a is: "));
+      let b = parseInt(prompt("Enter number b is: "));
+      let small = a < b ? a : b;
+      for (i = small; i >= 2; i--) {
+        if (a % i == 0 && b % i == 0) {
+          document.write("GCD =" + i);
+          break;
+        }
+      }
+    </script>
+  </body>
+</html>

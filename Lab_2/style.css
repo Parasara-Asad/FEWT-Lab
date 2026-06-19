@@ -1,0 +1,10 @@
+.main1{
+    background-color:rgb(76, 76, 76);
+}
+.main2{
+    background-color: aliceblue;
+}
+.heroimg{
+    height: 98vh;
+    background-image: url(./heroimge.jpg);
+}

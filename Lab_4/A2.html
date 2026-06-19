@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2</title>
+</head>
+<body>
+    <script>
+        let s = parseInt(prompt("Enter Start point: "));
+        let e = parseInt(prompt("Enter End point: "));
+        let count = 0;
+        for(let i=s+1; i<=e; i++){
+             count = 0;
+            for(let j=2; j<i; j++){
+                if(i%j == 0){
+                    count++;
+                }
+            }
+            if(count == 0){
+                document.write(" "+i);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A6</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Enter number is: "));
+        let count=0,rem;
+        let temp1=n,temp2=n,N;
+        let sum=0;
+        while (n!=0) {
+            rem = n %10;
+            count++;
+            n=parseInt(n/10);
+        }
+        while (temp1 != 0) {
+            N = n%10;
+            let ans = 1;
+            for(let i=1; i<=count; i++){
+                ans *=N;
+            }
+            sum +=ans;
+            temp1 = parseInt(temp1/10);
+        }
+        if (sum == temp2) {
+            alert("NUmber is Armstrong")
+        }
+        else{
+            alert("NUmber is Not Armstrong")
+        }
+    </script>
+</body>
+</html>
