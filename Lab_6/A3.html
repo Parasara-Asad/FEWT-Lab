@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A3</title>
+  </head>
+  <body>
+    <script>
+      let student = [
+        {
+          name: "Asad",
+          img: "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/15---28-04-2023-02-07-35.jpg",
+          Enrollement_num: 25010101172,
+        },
+        {
+            name: "Nazim",
+            img: "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/15---28-04-2023-02-07-35.jpg",
+            Enrollement_num: 25010101173,
+        },
+        {
+            name: "sadik",
+            img: "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/15---28-04-2023-02-07-35.jpg",
+            Enrollement_num: 25010101174,
+        },
+      ];
+      for (let i = 0; i < student.length; i++) {
+        document.write(student[i].name + "<br/>");
+        document.write(
+          `<img src=${student[i].img} alt="img not found"/>` + "<br/>",
+        );
+        document.write(student[i].Enrollement_num + "<br/>");
+        document.write("<hr/>");
+      }
+    </script>
+  </body>
+</html>

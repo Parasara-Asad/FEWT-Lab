@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A4</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  </head>
+  <body>
+    <script>
+      let prodect = [
+        {
+          name: "HP OmniBook Ultra Flip 35.6 cm (14) Next Gen AI 14-fh0369TU, Blue",
+          price: 265999,
+          img: "https://in-media.apjonlinecdn.com/catalog/product/cache/314dec89b3219941707ad62ccc90e585/c/0/c09053611-touch_2.png",
+        },
+        {
+          name: "AMD Ryzen Threadripper Pro Processor",
+          price: 353000,
+          img: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTMv7gGSqaszyqz5dhieSzkJdGgrPBhro8lRipxy3yAJ1JwcnK88wj1McNbrHGa67iIdQsDnXYak_SKTJQcXQAVdMzMjEiB",
+        },
+        {
+          name: "Zebronics Zeb-V19HD 18.5 Inch LED Monitor",
+          price: 2699,
+          img: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQK5xb0fTTY9lj0aEtxqyVwlNWNkoSXP-CP5N-4VPKmxdcs4oa2NqcHRlIrCHolXSsa260e-fwXswEA6SntIHmSh6M4j-92jVxBbReOpEDtmznZpgGSqTBLTqQ",
+        },
+      ];
+      for (let i = 0; i < prodect.length; i++) {
+        document.write(`
+            <div class="card" style="width: 18rem;">
+                <img src="${prodect[i].img}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${prodect[i].name}</h5>
+                        <h6 class="card-title">price: <i class="bi bi-currency-rupee"></i>${prodect[i].price}</h6>
+                    </div>
+            </div>
+            `);
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

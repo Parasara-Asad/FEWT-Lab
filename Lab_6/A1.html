@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A1</title>
+</head>
+<body>
+    <script>
+        let Faculties = [
+            {
+                name:"Arjun bala",
+                img:"https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/15---28-04-2023-02-07-35.jpg",
+                subject:"FEWT"
+            },
+            {
+                name:"Dr. Pradyumansinh Jadeja",
+                img:"https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/6---28-04-2023-02-06-07.jpg",
+                subject:"DS"
+            },
+            {
+                name:"Prof. Krunal Vyas",
+                img:"https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/290---28-04-2023-02-09-16.jpg",
+                subject:"DF"
+            }
+        ]
+        for(let i=0; i<Faculties.length;i++){
+            document.write(Faculties[i].name + "<br/>");
+            document.write(`<img src=${Faculties[i].img} alt="img not found"/>` + "<br/>");
+            document.write(Faculties[i].subject + "<br/>");
+            document.write("<hr/>")
+        }
+    </script>
+</body>
+</html>
