@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math class use</title>
+  </head>
+  <body>
+    <script>
+      let n1 = parseInt(prompt("Enter number: "));
+      let n2 = parseInt(prompt("Enter number: "));
+      document.write("Max nuber: " + Math.max(n1, n2) + "<br/>");
+      document.write("<hr/>");
+      document.write("Min nuber: " + Math.min(n1, n2) + "<br/>");
+      document.write("<hr/>");
+      let num = parseInt(prompt("Enter number: "));
+      document.write("Absolute: " + Math.abs(num) + "<br/>");
+      document.write("<hr/>");
+      document.write(
+        "Random number floor: " + Math.floor(Math.random() * 6) + "<br/>",
+      );
+      document.write("<hr/>");
+      document.write(
+        "Random number ceil: " + Math.ceil(Math.random() * 6) + "<br/>",
+      );
+      document.write("<hr/>");
+      document.write(
+        "Random number round: " + Math.round(Math.random() * 6) + "<br/>",
+      );
+      document.write("<hr/>");
+      document.write(
+        "Random number Truncate: " + Math.trunc(Math.random() * 6) + "<br/>",
+      );
+      document.write("<hr/>");
+    </script>
+  </body>
+</html>

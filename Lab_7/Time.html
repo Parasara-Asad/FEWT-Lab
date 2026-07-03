@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time and date</title>
+</head>
+<body>
+    <script>
+        let date = new Date();
+        document.write(" Current Date: "+date.getDate()+ "<br/>");
+        document.write("<hr>");
+        document.write("Time: "+date.getTime() + "<br/>");
+        document.write("<hr>");
+        document.write("Day: "+date.getDay() + "<br/>");
+        document.write("<hr>");
+        document.write("Month: "+(date.getMonth()+1) + "<br/>");
+        document.write("<hr>");
+        document.write("Year: "+date.getFullYear()+ "<br/>");
+        document.write("<hr>");
+        let Birthyear = parseInt(prompt("Enter birth year: "));
+        let newdate = new Date();
+        let age = newdate.getFullYear()-Birthyear;
+        document.write("Age: "+age);
+    </script>
+</body>
+</html>

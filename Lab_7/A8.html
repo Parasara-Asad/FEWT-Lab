@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A8</title>
+  </head>
+  <body>
+    <script>
+      let date1 = new Date(prompt("Enter first date: "));
+      let date2 = new Date(prompt("Enter second date: "));
+      let time = Math.abs(date2 - date1);
+      let totalDays = Math.ceil(time / (1000 * 60 * 60 * 24));
+      let weekends = 0;
+      for (let i = 0; i < totalDays; i++) {
+        let currentDate = new Date(date1);
+        currentDate.setDate(currentDate.getDate() + i);
+        if (currentDate.getDay() === 0 || currentDate.getDay() === 6) {
+          weekends++;
+        }
+      }
+      let workingDays = totalDays - weekends;
+      document.write("Total Days: " + totalDays + "<br/>");
+      document.write("Weekends: " + weekends + "<br/>");
+      document.write("Working Days: " + workingDays + "<br/>");
+    </script>
+  </body>
+</html>
