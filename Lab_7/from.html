@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+
+    <style>
+      .main {
+        margin: 20px auto;
+        width: 300px;
+        border: 2px solid black;
+        padding: 20px;
+        text-align: center;
+      }
+
+      input {
+        width: 90%;
+        padding: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <form onsubmit="validForm()">
+        <label>Enter Username</label><br /><br />
+        <input type="text" id="username" /><br /><br />
+
+        <label>Enter Password</label><br /><br />
+        <input type="password" id="password" /><br /><br />
+
+        <label>Confirm Password</label><br /><br />
+        <input type="password" id="cpassword" /><br /><br />
+
+        <label>Date of Birth</label><br /><br />
+        <input type="date" id="dob" /><br /><br />
+
+        <label>Enrollment Number</label><br /><br />
+        <input type="text" id="enroll" /><br /><br />
+
+        <label>Email</label><br /><br />
+        <input type="text" id="email" /><br /><br />
+
+        <input type="submit" value="Submit" />
+        <ul></ul>
+      </form>
+    </div>
+    <script>
+      function validForm() {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        let cpassword = document.getElementById("cpassword").value;
+        let enroll = document.getElementById("enroll").value;
+        let email = document.getElementById("email").value;
+
+        if (username.length < 8) {
+          alert("Username must be at least 8 characters.");
+          return false;
+        }
+        if (password.length < 8 || password.length > 12) {
+          alert("Password must be 8 to 12 characters.");
+          return false;
+        }
+        let hasDigit = false;
+        let hasSpecial = false;
+
+        for (let i = 0; i < password.length; i++) {
+          let ch = password[i];
+
+          if (ch >= "0" && ch <= "9") hasDigit = true;
+
+          if ("@#$%&*!".includes(ch)) hasSpecial = true;
+        }
+
+        if (!hasDigit || !hasSpecial) {
+          alert("Password must contain one digit and one special character.");
+          return false;
+        }
+        if (password != cpassword) {
+          alert("Passwords do not match.");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
