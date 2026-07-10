@@ -1,87 +1,151 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form Validation</title>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
 
     <style>
-      .main {
-        margin: 20px auto;
-        width: 300px;
-        border: 2px solid black;
-        padding: 20px;
-        text-align: center;
-      }
+        /* Student Registration Form */
 
-      input {
-        width: 90%;
-        padding: 5px;
-      }
+        body{
+            font-family: Arial;
+            background: lightgray;
+        }
+
+        .form-container{
+            width:400px;
+            margin:30px auto;
+            background:white;
+            padding:20px;
+            border:1px solid black;
+        }
+
+        h2{
+            text-align:center;
+            color:blue;
+        }
+
+        label{
+            font-weight:bold;
+        }
+
+        input{
+            width:100%;
+            padding:8px;
+            margin:5px 0 10px;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background:green;
+            color:white;
+            border:none;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <div class="main">
-      <form onsubmit="validForm()">
-        <label>Enter Username</label><br /><br />
-        <input type="text" id="username" /><br /><br />
+<body>
 
-        <label>Enter Password</label><br /><br />
-        <input type="password" id="password" /><br /><br />
+<div class="form-container">
 
-        <label>Confirm Password</label><br /><br />
-        <input type="password" id="cpassword" /><br /><br />
+<h2>Student Registration</h2>
 
-        <label>Date of Birth</label><br /><br />
-        <input type="date" id="dob" /><br /><br />
+<form onsubmit="return validateForm()">
 
-        <label>Enrollment Number</label><br /><br />
-        <input type="text" id="enroll" /><br /><br />
+<label>Username</label>
+<input type="text" id="username">
 
-        <label>Email</label><br /><br />
-        <input type="text" id="email" /><br /><br />
+<label>Enrollment No</label>
+<input type="text" id="enrollment">
 
-        <input type="submit" value="Submit" />
-        <ul></ul>
-      </form>
-    </div>
-    <script>
-      function validForm() {
-        let username = document.getElementById("username").value;
-        let password = document.getElementById("password").value;
-        let cpassword = document.getElementById("cpassword").value;
-        let enroll = document.getElementById("enroll").value;
-        let email = document.getElementById("email").value;
+<label>Email</label>
+<input type="text" id="email">
 
-        if (username.length < 8) {
-          alert("Username must be at least 8 characters.");
-          return false;
+<label>Date of Birth</label>
+<input type="date" id="dob">
+
+<label>Password</label>
+<input type="password" id="password">
+
+<label>Confirm Password</label>
+<input type="password" id="confirm">
+
+<button type="submit">Register</button>
+
+</form>
+
+<ul id="errorDisplay"></ul>
+
+</div>
+
+<script>
+
+function validateForm(){
+
+    let username=document.getElementById("username").value;
+    let enrollment=document.getElementById("enrollment").value;
+    let email=document.getElementById("email").value;
+    let dob=document.getElementById("dob").value;
+    let password=document.getElementById("password").value;
+    let confirm=document.getElementById("confirm").value;
+
+    let errorDisplay=document.getElementById("errorDisplay");
+    errorDisplay.innerHTML="";
+
+    let errors=[];
+
+    if(username.length<8){
+        errors.push("Username must be at least 8 characters.");
+    }
+
+    if(enrollment.length!=11 || isNaN(enrollment)){
+        errors.push("Enrollment must be 11 digits.");
+    }
+
+    let emailPattern=/^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+
+    if(!emailPattern.test(email)){
+        errors.push("Invalid Email.");
+    }
+
+    if(password.length<8 || password.length>12){
+        errors.push("Password must be 8 to 12 characters.");
+    }
+
+    if(!/\d/.test(password)){
+        errors.push("Password needs one digit.");
+    }
+
+    if(!/[^A-Za-z0-9]/.test(password)){
+        errors.push("Password needs one special character.");
+    }
+
+    if(password!=confirm){
+        errors.push("Passwords do not match.");
+    }
+
+    let birth=new Date(dob);
+    let today=new Date();
+    let age=today.getFullYear()-birth.getFullYear();
+
+    if(age<18){
+        errors.push("Age must be 18 or above.");
+    }
+
+    if(errors.length>0){
+
+        for(let i=0;i<errors.length;i++){
+            errorDisplay.innerHTML+="<li>"+errors[i]+"</li>";
         }
-        if (password.length < 8 || password.length > 12) {
-          alert("Password must be 8 to 12 characters.");
-          return false;
-        }
-        let hasDigit = false;
-        let hasSpecial = false;
 
-        for (let i = 0; i < password.length; i++) {
-          let ch = password[i];
+        return false;
+    }
 
-          if (ch >= "0" && ch <= "9") hasDigit = true;
+    alert("Validation Successful!");
+    return true;
+}
 
-          if ("@#$%&*!".includes(ch)) hasSpecial = true;
-        }
+</script>
 
-        if (!hasDigit || !hasSpecial) {
-          alert("Password must contain one digit and one special character.");
-          return false;
-        }
-        if (password != cpassword) {
-          alert("Passwords do not match.");
-          return false;
-        }
-      }
-    </script>
-  </body>
+</body>
 </html>
