@@ -1,52 +1,80 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html>
+<head>
     <title>CRUD</title>
-    <style>
-      input {
-        width: 30%;
-        height: 30px;
-      }
-      #btn {
-        width: 20%;
-        height: 30px;
-      }
-    </style>
-  </head>
-  <body>
-    <input type="text" placeholder="Enter Name" />
-    <button id="btn" onclick="adddata()">Add</button>
-    <br /><br /><br />
-    <table border="1">
-      <tr>
-        <th>number</th>
+</head>
+<body>
+
+<input type="text" id="name" placeholder="Enter Name">
+<button onclick="addData()">Add</button>
+
+<br><br>
+
+<table border="1">
+    <tr>
+        <th>No</th>
         <th>Name</th>
-        <th>action</th>
-      </tr>
-      <tbody id="tablebody"></tbody>
-    </table>
-    <script>
-      function adddata() {
-        let arr =[];
-        let name = document.getElementById("btn").value;
-        let tablebody = document.getElementById("tablebody");
-        if (name = "") {
-            alert("write name");
-            return;
-        }
-        let output = `
-            <tr>
-                <td>${name}<td/>
-                <td>
-                    <button id="update">update</button>
-                    <button id="delete">delete</button>
-                <td/>
-            <tr/>     
-        `
-        tablebody.innerHTML += output; 
-      }
-    </script>
-  </body>
+        <th>Action</th>
+    </tr>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+
+let arr = [];
+
+function addData() {
+
+    let name = document.getElementById("name").value;
+
+    if(name == ""){
+        alert("Enter Name");
+        return;
+    }
+
+    arr.push(name);
+    document.getElementById("name").value = "";
+    showData();
+}
+
+function showData() {
+
+    let output = "";
+
+    for(let i = 0; i < arr.length; i++) {
+
+        output += `
+        <tr>
+            <td>${i + 1}</td>
+            <td>${arr[i]}</td>
+            <td>
+                <button onclick="editData(${i})">Edit</button>
+                <button onclick="deleteData(${i})">Delete</button>
+            </td>
+        </tr>
+        `;
+    }
+
+    document.getElementById("tableBody").innerHTML = output;
+}
+
+function editData(index) {
+
+    let newName = prompt("Enter New Name", arr[index]);
+
+    if(newName != null && newName != "") {
+        arr[index] = newName;
+        showData();
+    }
+}
+
+function deleteData(index) {
+
+    arr.splice(index, 1);
+    showData();
+}
+
+</script>
+
+</body>
 </html>
