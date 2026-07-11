@@ -23,6 +23,9 @@
         let inp = document.getElementById("inp");
         inp.addEventListener("keydown",  function (event){
             document.getElementById("h3").innerHTML = "Press key is: "+ event.key;
+            if (event.key == " ") {
+                document.getElementById("h3").innerHTML = "Press key is: " + "Space";
+            }
         })
     </script>
   </body>

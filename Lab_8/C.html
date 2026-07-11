@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <style>
+      input {
+        width: 30%;
+        height: 30px;
+      }
+      #btn {
+        width: 20%;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter Name" />
+    <button id="btn" onclick="adddata()">Add</button>
+    <br /><br /><br />
+    <table border="1">
+      <tr>
+        <th>number</th>
+        <th>Name</th>
+        <th>action</th>
+      </tr>
+      <tbody id="tablebody"></tbody>
+    </table>
+    <script>
+      function adddata() {
+        let arr =[];
+        let name = document.getElementById("btn").value;
+        let tablebody = document.getElementById("tablebody");
+        if (name = "") {
+            alert("write name");
+            return;
+        }
+        let output = `
+            <tr>
+                <td>${name}<td/>
+                <td>
+                    <button id="update">update</button>
+                    <button id="delete">delete</button>
+                <td/>
+            <tr/>     
+        `
+        tablebody.innerHTML += output; 
+      }
+    </script>
+  </body>
+</html>
