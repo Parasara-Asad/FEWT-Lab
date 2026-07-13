@@ -1,49 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
+  <head>
     <title>CRUD</title>
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <input type="text" id="name" placeholder="Enter Name" />
+    <button onclick="addData()">Add</button>
+    <br /><br />
 
-<input type="text" id="name" placeholder="Enter Name">
-<button onclick="addData()">Add</button>
-
-<br><br>
-
-<table border="1">
-    <tr>
+    <table border="1">
+      <tr>
         <th>No</th>
         <th>Name</th>
         <th>Action</th>
-    </tr>
-    <tbody id="tableBody"></tbody>
-</table>
+      </tr>
+      <tbody id="tableBody"></tbody>
+    </table>
 
-<script>
+    <script>
+      let arr = [];
 
-let arr = [];
+      function addData() {
+        let name = document.getElementById("name").value;
 
-function addData() {
+        if (name == "") {
+          alert("Enter Name");
+          return;
+        }
 
-    let name = document.getElementById("name").value;
+        arr.push(name);
+        document.getElementById("name").value = "";
+        showData();
+      }
 
-    if(name == ""){
-        alert("Enter Name");
-        return;
-    }
+      function showData() {
+        let output = "";
 
-    arr.push(name);
-    document.getElementById("name").value = "";
-    showData();
-}
-
-function showData() {
-
-    let output = "";
-
-    for(let i = 0; i < arr.length; i++) {
-
-        output += `
+        for (let i = 0; i < arr.length; i++) {
+          output += `
         <tr>
             <td>${i + 1}</td>
             <td>${arr[i]}</td>
@@ -53,28 +49,24 @@ function showData() {
             </td>
         </tr>
         `;
-    }
+        }
 
-    document.getElementById("tableBody").innerHTML = output;
-}
+        document.getElementById("tableBody").innerHTML = output;
+      }
 
-function editData(index) {
+      function editData(index) {
+        let newName = prompt("Enter New Name", arr[index]);
 
-    let newName = prompt("Enter New Name", arr[index]);
+        if (newName != null && newName != "") {
+          arr[index] = newName;
+          showData();
+        }
+      }
 
-    if(newName != null && newName != "") {
-        arr[index] = newName;
+      function deleteData(index) {
+        arr.splice(index, 1);
         showData();
-    }
-}
-
-function deleteData(index) {
-
-    arr.splice(index, 1);
-    showData();
-}
-
-</script>
-
-</body>
+      }
+    </script>
+  </body>
 </html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanke Game</title>
+    <style>
+      h2,
+      p {
+        align-items: center;
+        text-align: center;
+      }
+      .main {
+        display: flex;
+        justify-content: center;
+      }
+      .box {
+        height: 80vh;
+        width: 60vw;
+        border: 1px solid black;
+        position: relative;
+      }
+      #myimg {
+        position: absolute;
+        height: 50px;
+        top: 10px;
+        border: 2px solid black;
+        left: 100px;
+      }
+      #eat {
+        position: absolute;
+        height: 50px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Welcome to Sanke Game</h2>
+    <p class="count">
+      count is: <b><i></i></b>
+    </p>
+    <div class="main">
+      <div class="box">
+        <img src="./eat.jpg" alt="" id="eat" />
+        <img id="myimg" src="./emoji.jpg" alt="image not found" />
+      </div>
+    </div>
+    <script>
+      let leftsize = 100;
+      let topsize = 10;
+      function moverigth() {
+        let img = document.getElementById("myimg");
+        let box = document.querySelector(".box");
+        let maxrigth = box.clientWidth - img.offsetWidth;
+        if (leftsize < maxrigth) {
+          leftsize += 10;
+          img.style.left = leftsize + "px";
+        }
+      }
+      function moveleft() {
+        let img = document.getElementById("myimg");
+        let box = document.querySelector(".box");
+        if (leftsize > 0) {
+          leftsize -= 10;
+          img.style.left = leftsize + "px";
+        }
+      }
+      function movebottom() {
+        let img = document.getElementById("myimg");
+        let box = document.querySelector(".box");
+        let maxbottom = box.clientHeight - img.offsetHeight;
+        if (topsize < maxbottom) {
+          topsize += 10;
+          img.style.top = topsize + "px";
+        }
+      }
+      function movetop() {
+        let img = document.getElementById("myimg");
+        if (topsize > 0) {
+          topsize -= 10;
+          img.style.top = topsize + "px";
+        }
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowRight") {
+          startmoverigth();
+        }
+
+        if (event.key === "ArrowLeft") {
+          startmoveleft();
+        }
+
+        if (event.key === "ArrowUp") {
+          startmovetop();
+        }
+
+        if (event.key === "ArrowDown") {
+          startmovebuttom();
+        }
+      });
+      let gameInterval;
+
+      function startmoverigth() {
+        clearInterval(gameInterval);
+        gameInterval = setInterval(moverigth, 100);
+      }
+
+      function startmoveleft() {
+        clearInterval(gameInterval);
+        gameInterval = setInterval(moveleft, 100);
+      }
+
+      function startmovetop() {
+        clearInterval(gameInterval);
+        gameInterval = setInterval(movetop, 100);
+      }
+
+      function startmovebuttom() {
+        clearInterval(gameInterval);
+        gameInterval = setInterval(movebottom, 100);
+      }
+      function foodposition() {
+        let eat = document.getElementById("eat");
+        let box = document.querySelector(".box");
+        let randomTop = Math.random() * (box.clientHeight - eat.offsetHeight);
+        let randomLeft = Math.random() * (box.clientWidth - eat.offsetWidth);
+        eat.style.top = randomTop + "px";
+        eat.style.left = randomLeft + "px";
+      }
+
+      let count = 0;
+
+      foodposition();
+
+      function checkCollision() {
+        let snake = document.getElementById("myimg");
+        let eat = document.getElementById("eat");
+
+        if (
+          leftsize < eat.offsetLeft + eat.offsetWidth &&
+          leftsize + snake.offsetWidth > eat.offsetLeft &&
+          topsize < eat.offsetTop + eat.offsetHeight &&
+          topsize + snake.offsetHeight > eat.offsetTop
+        ) {
+          count++;
+          document.querySelector(".count i").innerHTML = count;
+          foodposition();
+        }
+      }
+    </script>
+  </body>
+</html>
