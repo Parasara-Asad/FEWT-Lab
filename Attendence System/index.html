@@ -4,14 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Attendance Management System</title>
-
     <link rel="stylesheet" href="./index.css" />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -19,71 +16,39 @@
   </head>
   <body>
     <div class="background"></div>
-
     <div class="container">
       <header>
         <div class="logo">
           <i class="fa-solid fa-user-check"></i>
-
           <h1>Attendance Management</h1>
         </div>
-
         <div class="dateTime">
           <div id="currentDate"></div>
-
           <div id="currentTime"></div>
         </div>
       </header>
-
       <div class="setupCard">
         <h2>Attendance Setup</h2>
-
         <div class="inputGroup">
           <div>
             <label>Start Roll Number</label>
-
             <input
               type="number"
               id="startRoll"
               placeholder="Enter Start Roll"
             />
           </div>
-
           <div>
             <label>End Roll Number</label>
-
             <input type="number" id="endRoll" placeholder="Enter End Roll" />
           </div>
         </div>
         <button id="startAttendance">
           <i class="fa-solid fa-play"></i>
-
           Start Attendance
         </button>
       </div>
-
       <div class="dashboard" id="dashboard">
-        <div class="studentCard">
-          <div class="avatar">
-            <i class="fa-solid fa-user-graduate"></i>
-          </div>
-
-          <div class="studentInfo">
-            <h2 id="studentName">Student 1</h2>
-
-            <p>
-              Roll Number :
-
-              <span id="rollNumber"> 1 </span>
-            </p>
-
-            <p>Department : Computer Engineering</p>
-
-            <p>Semester : 5</p>
-
-            <p>Section : A</p>
-          </div>
-        </div>
 
         <div class="bigRollCard">
           <div class="rollTitle">CURRENT ROLL</div>
