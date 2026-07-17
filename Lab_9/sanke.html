@@ -46,46 +46,34 @@
 
       let x = 100;
       let y = 100;
-      let size = 20;
 
-      // Initial direction
-      let dx = 20;
-      let dy = 0;
+      drawSnake();
 
-      // Change direction with arrow keys
       document.addEventListener("keydown", function (event) {
         if (event.key === "ArrowRight") {
-          dx = 20;
-          dy = 0;
+          x += 10;
         }
 
         if (event.key === "ArrowLeft") {
-          dx = -20;
-          dy = 0;
+          x -= 10;
         }
 
         if (event.key === "ArrowUp") {
-          dx = 0;
-          dy = -20;
+          y -= 10;
         }
 
         if (event.key === "ArrowDown") {
-          dx = 0;
-          dy = 20;
+          y += 10;
         }
+
+        drawSnake();
       });
 
-
-      setInterval(darwsneke, 150);
-
-      function darwsneke() {
-        x += dx;
-        y += dy;
-
+      function drawSnake() {
         ctx.clearRect(0, 0, game.width, game.height);
 
         ctx.fillStyle = "green";
-        ctx.fillRect(x, y, size, size);
+        ctx.fillRect(x, y, 40, 40);
       }
     </script>
   </body>
