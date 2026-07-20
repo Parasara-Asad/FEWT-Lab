@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab_10</title>
+  </head>
+  <body>
+    <h2 id="text">Click</h2>
+    <script>
+      document.addEventListener("mousedown", (event) => {
+        if (event.button == 0) {
+          document.getElementById("text").innerHTML = "Left click";
+        } else if (event.button == 2) {
+          document.getElementById("text").innerHTML = "Right click";
+        }
+      });
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault(),
+      );
+    </script>
+  </body>
+</html>
