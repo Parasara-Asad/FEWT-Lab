@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab_11</title>
+  </head>
+  <body>
+    <script>
+      let arr = ["apple", "banana", "orange"];
+      let [one, two, three] = arr;
+      document.write("Destructuring Array " + "<br>");
+      document.write("arr[0] = " + one + "<br>");
+      document.write("arr[1] = " + two + "<br>");
+      document.write("arr[2] = " + three + "<br>");
+      
+      document.write("<hr>");
+      let obj = {
+          name: "asdfgh",
+          age: 12345,
+        };
+        let { name, age } = obj;
+        document.write("Destructuring object " + "<br>");
+      document.write("Name is: " + name + "</br>");
+      document.write("Age is: " + age + "</br>");
+    </script>
+  </body>
+</html>

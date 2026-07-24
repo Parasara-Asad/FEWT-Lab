@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab_11</title>
+  </head>
+  <body>
+    <script>
+      class student {
+        constructor(name, roll, age) {
+          this.name = name;
+          this.roll = roll;
+          this.age = age;
+        }
+        include(){
+            document.write("Name is: "+this.name + "</br>");
+            document.write("Roll number is: "+this.roll + "</br>");
+            document.write("Age is: "+this.age + "</br>");
+        }
+      }
+     let s1 = new student('Asad',369,19);
+     let s2 = new student('Nazim',375,19);
+     s1.include();
+     s2.include();
+      
+      
+    </script>
+  </body>
+</html>
