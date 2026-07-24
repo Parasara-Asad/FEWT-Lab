@@ -13,16 +13,32 @@
       document.write("arr[0] = " + one + "<br>");
       document.write("arr[1] = " + two + "<br>");
       document.write("arr[2] = " + three + "<br>");
-      
+
       document.write("<hr>");
       let obj = {
-          name: "asdfgh",
-          age: 12345,
-        };
-        let { name, age } = obj;
-        document.write("Destructuring object " + "<br>");
+        name: "asdfgh",
+        age: 12345,
+      };
+      let { name, age } = obj;
+      document.write("Destructuring object " + "<br>");
       document.write("Name is: " + name + "</br>");
       document.write("Age is: " + age + "</br>");
+
+      let a=200;
+      let b=100;
+      document.write("<hr>")
+      document.write("Before swap");
+      document.write("<br>")
+      document.write("A="+a);
+      document.write("<br>")
+      document.write("B="+b);
+      [b,a] = [a,b];
+      document.write("<br>")
+      document.write("After swap");
+      document.write("<br>")
+      document.write("A="+a);
+      document.write("<br>")
+      document.write("B="+b);
     </script>
   </body>
 </html>
