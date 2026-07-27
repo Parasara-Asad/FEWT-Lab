@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>A8</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <p>Paragraph 1</p>
+      <p id="target">Paragraph 2</p>
+      <p>Paragraph 3</p>
+      <p>Paragraph 4</p>
+    </div>
+
+    <button id="btn">Hide Siblings</button>
+
+    <script>
+      $(document).ready(function () {
+        $("#btn").click(function () {
+          $("#target").siblings().hide();
+        });
+      });
+    </script>
+  </body>
+</html>

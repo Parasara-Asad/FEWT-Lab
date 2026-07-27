@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>A6</title>
+  </head>
+
+  <body>
+    <table id="table1" border="1">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Ali</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Ahmed</td>
+      </tr>
+    </table>
+
+    <br />
+
+    <button id="btn">Add Row</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#btn").click(function () {
+          $("#table1").append("<tr><td>3</td><td>Asad</td></tr>");
+        });
+      });
+    </script>
+  </body>
+</html>

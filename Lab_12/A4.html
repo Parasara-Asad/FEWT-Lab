@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>A4</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <input type="text" id="txt" placeholder="Enter text" />
+    <button id="btn">Show</button>
+
+    <p class="data"></p>
+
+    <script>
+      $("#btn").click(function () {
+        var text = $("#txt").val();
+        $(".data").text(text);
+      });
+    </script>
+  </body>
+</html>

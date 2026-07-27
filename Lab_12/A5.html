@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>A5</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <ul id="list">
+      <li>mohamad</li>
+      <li>asad</li>
+    </ul>
+
+    <button id="btn">Add Item</button>
+
+    <script>
+      $("#btn").click(function () {
+        $("#list").append("<li>zahid bhai</li>");
+        $("#list").prepend("<li>Parasara</li>");
+      });
+    </script>
+  </body>
+</html>
