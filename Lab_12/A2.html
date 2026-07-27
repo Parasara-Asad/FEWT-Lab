@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Slide Example</title>
+  </head>
+  <body>
+    <button id="slideup">Slide Up</button>
+    <button id="slidedown">Slide Down</button>
+    <button id="slidetoggle">Slide Toggle</button>
+
+    <br /><br />
+
+    <img
+      src="./Gemini_Generated_Image_cxqvfcxqvfcxqvfc.png"
+      id="myimg"
+      height="500"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+      $("#slideup").click(function () {
+        $("#myimg").slideUp();
+      });
+
+      $("#slidedown").click(function () {
+        $("#myimg").slideDown();
+      });
+
+      $("#slidetoggle").click(function () {
+        $("#myimg").slideToggle();
+      });
+    </script>
+  </body>
+</html>
