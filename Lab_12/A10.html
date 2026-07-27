@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>A10</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <h2 class="myEle">Heading 1</h2>
+    <p class="myEle">Paragraph 1</p>
+    <div class="myEle">This is a div.</div>
+    <br><br>
+    <button id="btn">Hide Elements</button>
+
+    <script>
+        $("#btn").click(() => {
+          $(".myEle").hide();
+        });
+    </script>
+  </body>
+</html>

@@ -1,17 +1,21 @@
 <!doctype html>
 <html>
   <head>
-    <title>A9</title>
+    <title>A11</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <body>
     <h2 id="myEle">Hello World!</h2>
 
-    <button id="btn">Hide Element</button>
+    <button id="btn">Toggle</button>
+    <button id="show">show</button>
 
     <script>
       $("#btn").click(function () {
-        $("#myEle").hide();
+        $("#myEle").toggle();
+      });
+      $("#show").click(function () {
+        $("#myEle").show();
       });
     </script>
   </body>

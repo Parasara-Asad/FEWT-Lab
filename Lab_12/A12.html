@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Change Input Background Color</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    Name: <input type="text" /><br /><br />
+    Email: <input type="email" /><br /><br />
+
+    <button id="btn">Change Background Color</button>
+
+    <script>
+      $(document).ready(function () {
+        $("#btn").click(function () {
+          $("input").css("background-color", "yellow");
+        });
+      });
+    </script>
+  </body>
+</html>
