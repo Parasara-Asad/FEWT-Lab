@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A1</title>
+
+  </head>
+  <body>
+    <p id="p1">Hello world</p>
+    <button id="btn">Click here</button>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $("#btn").click(() => {
+        $("#p1").fadeOut();
+      });
+    </script>
+  </body>
+</html>
