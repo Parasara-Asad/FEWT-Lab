@@ -1,0 +1,12 @@
+.card{
+    width: 18rem;
+}
+
+.card-img-top{
+    height: 60vh;
+    
+}
+
+body{
+    background-color: rgb(34, 33, 33);
+}
