@@ -12,7 +12,7 @@ function A1() {
       <button className="btn btn-primary ms-5" onClick={() => setCount((prev) => prev - 1)}>
         Decr 1
       </button>
-      <button className="btn btn-primary ms-5" onClick={() => setCount((0))}>
+      <button className="btn btn-primary ms-5" onClick={() => setCount(0)}>
         Reset
       </button>
     </>

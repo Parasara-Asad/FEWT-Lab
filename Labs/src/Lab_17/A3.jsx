@@ -1,39 +1,31 @@
 function A3() {
-  let obj = [
-    {
-      id: 1,
-      name: "Asad",
-      couers: "CSE",
-    },
-    {
-      id: 2,
-      name: "Nazim",
-      couers: "IT",
-    },
-    {
-      id: 3,
-      name: "Nakib",
-      couers: "ME",
-    },
+  const obj = [
+    { id: 1, name: "Asad", course: "CSE" },
+    { id: 2, name: "Nazim", course: "IT" },
+    { id: 3, name: "Nakib", course: "ME" },
   ];
+
   return (
-    <>
-      <div className="container w-50">
-        <table className="table table-striped">
-          <thead>
-            {obj.map((obj) => {
-              return (
-                <tr>
-                  <td>{obj.id}</td>
-                  <td>{obj.name}</td>
-                  <td>{obj.couers}</td>
-                </tr>
-              );
-            })}
-          </thead>
-        </table>
-      </div>
-    </>
+    <div className="container w-50">
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Course</th>
+          </tr>
+        </thead>
+        <tbody>
+          {obj.map((student) => (
+            <tr key={student.id}>
+              <td>{student.id}</td>
+              <td>{student.name}</td>
+              <td>{student.course}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
