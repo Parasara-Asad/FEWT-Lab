@@ -1,13 +1,19 @@
+
 function A1() {
-  const names = ["Asad", "nazim", "sadik", "nakib"];
+  let names = ["Asad", "nazim", "sadik", "nakib"];
 
   return (
-    <ul>
-      {names.map((name) => (
-        <li key={name}>{name}</li>
-      ))}
-    </ul>
+    <>
+      {names.map((name, index) => {
+        return (
+          <ul key={index}>
+            <li>{name}</li>
+          </ul>
+        );
+      })}
+    </>
   );
 }
 
 export default A1;
+

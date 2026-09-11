@@ -1,1 +1,9 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
+
+body{
+    background-color: rgb(63, 63, 63);
+}
+
+*{
+    color: white;
+}

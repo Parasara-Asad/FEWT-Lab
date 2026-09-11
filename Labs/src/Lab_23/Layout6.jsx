@@ -1,12 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
 
-function Layout5() {
+function Layout6() {
   return (
     <>
       <nav className="navbar bg-secondary">
         <ul className="nav justify-content-center w-100">
           <li className="nav-item">
-            <Link className="nav-link" to="/Lab19/A19">
+            <Link className="nav-link" to="/Lab23/A23">
               A1
             </Link>
           </li>
@@ -22,4 +22,4 @@ function Layout5() {
   );
 }
 
-export default Layout5;
+export default Layout6;

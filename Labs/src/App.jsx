@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css"
 
 import LabNavs from "./LabNavs";
-
 import Homepage from "./Homepage";
 
 // Lab 18
@@ -29,6 +29,10 @@ import A2 from "./Lab_21/A2";
 import Layout4 from "./Lab_22/Layout4";
 import Cal from "./Lab_22/A1";
 
+//Lab 23
+import Layout6 from "./Lab_23/Layout6";
+import A23 from "./Lab_23/A23";
+
 function App() {
   return (
     <BrowserRouter>
@@ -40,19 +44,18 @@ function App() {
 
         {/* ================= LAB 18 ================= */}
         <Route path="/Lab18" element={<Layout3 />}>
-          <Route index element={<App_a />} />
           <Route path="A" element={<App_a />} />
+          <Route path="B" element={<App_a />} />
+          <Route path="C" element={<App_a />} />
         </Route>
 
         {/* ================= LAB 19 ================= */}
         <Route path="/Lab19" element={<Layout5 />}>
-          <Route index element={<A19 />} />
           <Route path="A19" element={<A19 />} />
         </Route>
 
         {/* ================= LAB 20 ================= */}
         <Route path="/Lab20" element={<Layout />}>
-          <Route index element={<Home />} />
           <Route path="Home" element={<Home />} />
           <Route path="Contact" element={<Contact />} />
           <Route path="About" element={<About />} />
@@ -62,15 +65,17 @@ function App() {
 
         {/* ================= LAB 21 ================= */}
         <Route path="/Lab21" element={<Layout2 />}>
-          <Route index element={<A1 />} />
           <Route path="A1" element={<A1 />} />
           <Route path="A2" element={<A2 />} />
         </Route>
 
         {/* ================= LAB 22 ================= */}
         <Route path="/Lab22" element={<Layout4 />}>
-          <Route index element={<Cal />} />
-          <Route path="Cal" element={<Cal />} />
+          <Route path="A1" element={<Cal />} />
+        </Route>
+        {/* ================= LAB 23 ================= */}
+        <Route path="/Lab23" element={<Layout6 />}>
+          <Route path="A23" element={<A23 />} />
         </Route>
       </Routes>
     </BrowserRouter>

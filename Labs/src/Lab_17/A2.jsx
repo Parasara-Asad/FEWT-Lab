@@ -1,13 +1,19 @@
+
 function A2() {
-  const facultiesName = ["Arjun bala", "Dharmik", "Vishal"];
+  let Facultiesname = ["Arjun bala", "Dharmik", "Vishal"];
 
   return (
-    <ul>
-      {facultiesName.map((name) => (
-        <li key={name}>{name}</li>
-      ))}
-    </ul>
+    <>
+      {Facultiesname.map((name, index) => {
+        return (
+          <ul key={index}>
+            <li>{name}</li>
+          </ul>
+        );
+      })}
+    </>
   );
 }
 
 export default A2;
+

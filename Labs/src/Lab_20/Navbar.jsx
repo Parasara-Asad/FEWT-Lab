@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="navbar bg-body-tertiary">
+    <nav className="navbar bg-secondary ">
       <ul className="nav justify-content-center w-100">
 
         <li className="nav-item">
-          <Link className="nav-link" to="/Lab20">
+          <Link className="nav-link" to="/Lab20/Home">
             Home
           </Link>
         </li>
