@@ -36,6 +36,11 @@ function LabNavs() {
               Lab 23
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/Lab24">
+              Lab 24
+            </Link>
+          </li>
         </ul>
       </nav>
     </>

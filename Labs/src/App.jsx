@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css"
+import "./App.css";
 
 import LabNavs from "./LabNavs";
 import Homepage from "./Homepage";
@@ -29,9 +29,14 @@ import A2 from "./Lab_21/A2";
 import Layout4 from "./Lab_22/Layout4";
 import Cal from "./Lab_22/A1";
 
-//Lab 23
+// Lab 23
 import Layout6 from "./Lab_23/Layout6";
 import A23 from "./Lab_23/A23";
+
+// Lab 24
+import Layout7 from "./Lab_24/Layout7";
+import A24 from "./Lab_24/A24";
+import StudentDetails from "./Lab_24/StudentDetails";
 
 function App() {
   return (
@@ -73,9 +78,16 @@ function App() {
         <Route path="/Lab22" element={<Layout4 />}>
           <Route path="A1" element={<Cal />} />
         </Route>
+
         {/* ================= LAB 23 ================= */}
         <Route path="/Lab23" element={<Layout6 />}>
           <Route path="A23" element={<A23 />} />
+        </Route>
+
+        {/* ================= LAB 24 ================= */}
+        <Route path="/Lab24" element={<Layout7 />}>
+          <Route path="A24" element={<A24 />} />
+          <Route path="studentDetails/:id" element={<StudentDetails />} />
         </Route>
       </Routes>
     </BrowserRouter>
