@@ -37,6 +37,8 @@ import A23 from "./Lab_23/A23";
 import Layout7 from "./Lab_24/Layout7";
 import A24 from "./Lab_24/A24";
 import StudentDetails from "./Lab_24/StudentDetails";
+import Layout8 from "./Lab_25/Layout8";
+import A25 from "./Lab_25/A25";
 
 function App() {
   return (
@@ -88,6 +90,11 @@ function App() {
         <Route path="/Lab24" element={<Layout7 />}>
           <Route path="A24" element={<A24 />} />
           <Route path="studentDetails/:id" element={<StudentDetails />} />
+        </Route>
+
+        {/* ================= LAB 25 ================= */}
+        <Route path="/Lab25" element={<Layout8 />}>
+          <Route path="A25" element={<A25 />} />
         </Route>
       </Routes>
     </BrowserRouter>
